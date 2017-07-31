@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 .happypack
 dist
@@ -5,3 +6,12 @@ dist
 node_modules
 coverage
 webpack/webpack-assets.json
+=======
+**/.DS_STORE
+npm-debug.log
+.imdone
+build
+coverage
+node_modules
+.env
+>>>>>>> origin/master
