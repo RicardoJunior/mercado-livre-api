@@ -50,9 +50,14 @@ class ProductsController extends BaseController {
    */
   search = async (req, res, next) => {
     try {
-      const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${req.query.search}`);
-      const data = await response.json();
-      res.json([data].map(this.searchModel));
+      if (req.query.search) {
+        const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${req.query.search}`);
+        const data = await response.json();
+        res.json([data].map(this.searchModel));
+      }
+      else {
+        throw 'Search not informed';
+      }
     } catch(err) {
       next(err);
     }
